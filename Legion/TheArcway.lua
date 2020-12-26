@@ -1,8 +1,8 @@
 local dungeonIndex = 12
 local nerfMultiplier = 1
 local pi = math.pi
-MDT.dungeonTotalCount[dungeonIndex] = {normal=392,teeming=466,teemingEnabled=true}
-MDT.dungeonBosses[dungeonIndex] ={ --The Arcway
+LDT.dungeonTotalCount[dungeonIndex] = {normal=392,teeming=466,teemingEnabled=true}
+LDT.dungeonBosses[dungeonIndex] ={ --The Arcway
     [1] = {
         [1] = {
             ["name"] = "Ivanyr",
@@ -50,7 +50,7 @@ MDT.dungeonBosses[dungeonIndex] ={ --The Arcway
         },
     },
 }
-MDT.dungeonEnemies[dungeonIndex] = { --The Arcway
+LDT.dungeonEnemies[dungeonIndex] = { --The Arcway
     [1] = {
         ["name"] = "Unstable Amalgamation",
         ["health"] = 11114474*nerfMultiplier,

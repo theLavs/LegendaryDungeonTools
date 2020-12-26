@@ -23,8 +23,8 @@ Features
 
 Slash Commands
 ------------------
-- /mythicdungeontools
-- /mdt
+- /legendarydungeontools
+- /LDT
 
 Support / Social
 ------------------

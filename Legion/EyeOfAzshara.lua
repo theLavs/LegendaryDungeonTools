@@ -1,8 +1,8 @@
 local dungeonIndex = 5
 local nerfMultiplier = 1
 local pi = math.pi
-MDT.dungeonTotalCount[dungeonIndex] = {normal=206,teeming=242,teemingEnabled=true}
-MDT.dungeonBosses[dungeonIndex] = {--Eye of Azshara
+LDT.dungeonTotalCount[dungeonIndex] = {normal=206,teeming=242,teemingEnabled=true}
+LDT.dungeonBosses[dungeonIndex] = {--Eye of Azshara
 	[1] = {
 		[1] = {
 			["name"] = "Warlord Parjesh",				
@@ -51,7 +51,7 @@ MDT.dungeonBosses[dungeonIndex] = {--Eye of Azshara
 		},
 	}
 }
-MDT.dungeonEnemies[dungeonIndex] = { --Eye of Azshara
+LDT.dungeonEnemies[dungeonIndex] = { --Eye of Azshara
 	[1] = {
 		["name"] = "Wandering Shellback",
 		["health"] = 11855438,

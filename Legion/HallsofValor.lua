@@ -1,8 +1,8 @@
 local dungeonIndex = 6
 local nerfMultiplier = 1
 local pi = math.pi
-MDT.dungeonTotalCount[dungeonIndex] = {normal=126,teeming=151,teemingEnabled=true}
-MDT.dungeonBosses[dungeonIndex] = {
+LDT.dungeonTotalCount[dungeonIndex] = {normal=126,teeming=151,teemingEnabled=true}
+LDT.dungeonBosses[dungeonIndex] = {
 	[1] = {
 		[1] = {
             ["name"] = "Hymdall",
@@ -66,7 +66,7 @@ MDT.dungeonBosses[dungeonIndex] = {
         },
 	},
 }
-MDT.dungeonEnemies[dungeonIndex] = {
+LDT.dungeonEnemies[dungeonIndex] = {
 	[1] = {
 		["name"] = "Valarjar Champion",
 		["health"] = 10373509,

@@ -1,6 +1,6 @@
 # Created by Nnoggie
 # Scrapes wowhead for displayIds based on npcIds
-# Use MDT:ExportNPCIdsWithoutDisplayIds() to export npcIds to query
+# Use LDT:ExportNPCIdsWithoutDisplayIds() to export npcIds to query
 import urllib.request
 import re
 import time

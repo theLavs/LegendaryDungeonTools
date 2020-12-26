@@ -1,7 +1,7 @@
-local MDT = MDT
-local L = MDT.L
+local LDT = LDT
+local L = LDT.L
 local dungeonIndex = 19
-MDT.mapInfo[dungeonIndex] = {
+LDT.mapInfo[dungeonIndex] = {
     viewportPositionOverrides =
     {
         [2] = {
@@ -11,14 +11,14 @@ MDT.mapInfo[dungeonIndex] = {
         };
     };
 };
-MDT.dungeonTotalCount[dungeonIndex] = {normal=319,teeming=383,teemingEnabled=true}
+LDT.dungeonTotalCount[dungeonIndex] = {normal=319,teeming=383,teemingEnabled=true}
 
 
 local selectorGroup
 local AceGUI = LibStub("AceGUI-3.0")
 local db
 local function fixBoralusShowHide(widget, frame, isFrame)
-    frame = frame or MDT.main_frame
+    frame = frame or LDT.main_frame
     local originalShow,originalHide = frame.Show,frame.Hide
     if not isFrame then
         widget = widget.frame
@@ -35,8 +35,8 @@ local function fixBoralusShowHide(widget, frame, isFrame)
     end
 end
 
-function MDT:ToggleBoralusSelector(show)
-    db = MDT:GetDB()
+function LDT:ToggleBoralusSelector(show)
+    db = LDT:GetDB()
     if not selectorGroup then
         selectorGroup = AceGUI:Create("SimpleGroup")
         selectorGroup.frame:SetFrameStrata("HIGH")
@@ -44,15 +44,15 @@ function MDT:ToggleBoralusSelector(show)
         if not selectorGroup.frame.SetBackdrop then
             Mixin(selectorGroup.frame, BackdropTemplateMixin)
         end
-        selectorGroup.frame:SetBackdropColor(unpack(MDT.BackdropColor))
+        selectorGroup.frame:SetBackdropColor(unpack(LDT.BackdropColor))
         fixBoralusShowHide(selectorGroup)
         selectorGroup:SetLayout("Flow")
         selectorGroup.frame.bg = selectorGroup.frame:CreateTexture(nil, "BACKGROUND")
         selectorGroup.frame.bg:SetAllPoints(selectorGroup.frame)
-        selectorGroup.frame.bg:SetColorTexture(unpack(MDT.BackdropColor))
+        selectorGroup.frame.bg:SetColorTexture(unpack(LDT.BackdropColor))
         selectorGroup:SetWidth(120)
         selectorGroup:SetHeight(120)
-        selectorGroup.frame:SetPoint("TOPRIGHT", MDT.main_frame,"TOPRIGHT",0,0)
+        selectorGroup.frame:SetPoint("TOPRIGHT", LDT.main_frame,"TOPRIGHT",0,0)
 
         local label = AceGUI:Create("Label")
         label:SetText("  Faction:")
@@ -67,13 +67,13 @@ function MDT:ToggleBoralusSelector(show)
         selectorGroup:AddChild(check1)
         check1:SetCallback("OnValueChanged",function(widget,callbackName,value)
             if value then
-                MDT:GetCurrentPreset().faction = 1
-                MDT:UpdateBoralusSelector()
-                MDT:ReloadPullButtons()
-                MDT:UpdateProgressbar()
+                LDT:GetCurrentPreset().faction = 1
+                LDT:UpdateBoralusSelector()
+                LDT:ReloadPullButtons()
+                LDT:UpdateProgressbar()
             end
-            if MDT.liveSessionActive and MDT:GetCurrentPreset().uid == MDT.livePresetUID then
-                MDT:LiveSession_SendBoralusSelector(1)
+            if LDT.liveSessionActive and LDT:GetCurrentPreset().uid == LDT.livePresetUID then
+                LDT:LiveSession_SendBoralusSelector(1)
             end
             check1:SetValue(true)
         end)
@@ -82,12 +82,12 @@ function MDT:ToggleBoralusSelector(show)
         selectorGroup:AddChild(check2)
         check2:SetCallback("OnValueChanged",function(widget,callbackName,value)
             if value then
-                MDT:GetCurrentPreset().faction = 2
-                MDT:UpdateBoralusSelector()
-                MDT:ReloadPullButtons()
-                MDT:UpdateProgressbar()
-                if MDT.liveSessionActive and MDT:GetCurrentPreset().uid == MDT.livePresetUID then
-                    MDT:LiveSession_SendBoralusSelector(2)
+                LDT:GetCurrentPreset().faction = 2
+                LDT:UpdateBoralusSelector()
+                LDT:ReloadPullButtons()
+                LDT:UpdateProgressbar()
+                if LDT.liveSessionActive and LDT:GetCurrentPreset().uid == LDT.livePresetUID then
+                    LDT:LiveSession_SendBoralusSelector(2)
                 end
             end
             check2:SetValue(true)
@@ -96,20 +96,20 @@ function MDT:ToggleBoralusSelector(show)
     end
     if show then
         selectorGroup.frame:Show()
-        MDT:UpdateBoralusSelector()
+        LDT:UpdateBoralusSelector()
     else
         selectorGroup.frame:Hide()
     end
 end
 
-function MDT:UpdateBoralusSelector()
-    selectorGroup.check1:SetValue(MDT:GetCurrentPreset().faction==1)
-    selectorGroup.check2:SetValue(MDT:GetCurrentPreset().faction==2)
-    MDT:DungeonEnemies_UpdateSeasonalAffix()
-    MDT:DungeonEnemies_UpdateBoralusFaction(MDT:GetCurrentPreset().faction)
+function LDT:UpdateBoralusSelector()
+    selectorGroup.check1:SetValue(LDT:GetCurrentPreset().faction==1)
+    selectorGroup.check2:SetValue(LDT:GetCurrentPreset().faction==2)
+    LDT:DungeonEnemies_UpdateSeasonalAffix()
+    LDT:DungeonEnemies_UpdateBoralusFaction(LDT:GetCurrentPreset().faction)
 end
 
-MDT.mapPOIs[dungeonIndex] = {
+LDT.mapPOIs[dungeonIndex] = {
     [1] = {
         [1] = {
             ["y"] = -112.09388221952;
@@ -308,7 +308,7 @@ MDT.mapPOIs[dungeonIndex] = {
     };
 };
 
-MDT.dungeonEnemies[dungeonIndex] = {
+LDT.dungeonEnemies[dungeonIndex] = {
     [1] = {
         ["clones"] = {
             [1] = {

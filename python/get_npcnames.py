@@ -66,7 +66,7 @@ def get_npc_names_localized(npc_id):
     for lang in languages:
         npc_list[name][lang] = get_npc_name(npc_id, languages[lang])
 
-def collect_mdt_npcids():
+def collect_LDT_npcids():
     # reaping and awakening mobs
     ids = [148716, 148893, 148894, 161169, 160984, 161164, 161167]
     for expansion in expansions:
@@ -110,7 +110,7 @@ def split_list(a, n):
     return (a[i * k + min(i, m):(i + 1) * k + min(i + 1, m)] for i in range(n))
 
 if __name__ == "__main__":
-    ids = collect_mdt_npcids()
+    ids = collect_LDT_npcids()
     total_ids = len(ids)
     print(f'{total_ids} NPC IDs in dungeon files')
     nthreads = 5 #100
